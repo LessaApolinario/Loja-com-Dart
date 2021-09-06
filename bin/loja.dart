@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:loja/src/cad_livros.dart';
 import 'package:loja/src/menu.dart';
 
 void main(List<String> arguments) {
   bool condicao = true;
+  List<Map<String, dynamic>> livros = [];
 
   do {
     menu();
@@ -12,7 +14,7 @@ void main(List<String> arguments) {
     if (opcao != null) {
       switch (int.parse(opcao)) {
         case 1:
-          // cadastrarLivro();
+          cadastrarLivro(livros);
           break;
         case 2:
           // atualizarLivro();
