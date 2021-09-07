@@ -15,20 +15,27 @@ comprar(List<Map<String, dynamic>> livros) {
   print("Informe o ID do livro a ser comprado: ");
   l.id = stdin.readLineSync();
 
-  livro["quantidade"] = l.getQuantidade();
-
   for (livro in livros) {
     if (livro["id"] == l.id) {
       print("Informe a quantidade de livros do mesmo volume: ");
-      l.quantidade = stdin.readLineSync();
+      String? estoque = stdin.readLineSync();
       // até aqui funcionando
 
-      if (livro["quantidade"] == 0) {
-        print("Estoque vazio para este volume!");
-      } else {
-        livro["quantidade"] -= l.quantidade;
-
+      if (estoque != null) {
         l.setQuantidade(int.parse(livro["quantidade"]));
+
+        if (l.getQuantidade() <= 0) {
+          print("Estoque indisponível para este volume!");
+        } else if (l.getQuantidade() > 0) {
+          int novoEstoque = l.getQuantidade();
+          novoEstoque -= int.parse(estoque); // removendo quantidade do estoque
+
+          livro.remove("quantidade"); // removendo o estoque do map
+
+          livro["quantidade"] = novoEstoque; // adicionando o valor atualizado no map
+
+          print("Livro comprado com sucesso!");
+        }
       }
     } else {
       print("O ID não existe!");
@@ -37,6 +44,4 @@ comprar(List<Map<String, dynamic>> livros) {
 
   print("Lista atual: ");
   print(livros);
-
-  // print("Livro comprado com sucesso!");
 }
