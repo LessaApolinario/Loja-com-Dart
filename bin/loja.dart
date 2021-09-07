@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:loja/src/cad_livros.dart';
+import 'package:loja/src/compra.dart';
 import 'package:loja/src/menu.dart';
 
 void main(List<String> arguments) {
@@ -20,7 +21,7 @@ void main(List<String> arguments) {
           // atualizarLivro();
           break;
         case 3:
-          // comprar();
+          comprar(livros);
           break;
         case 4:
           // cadastrarFuncionario();
