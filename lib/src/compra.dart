@@ -11,7 +11,7 @@ comprar(List<Map<String, dynamic>> livros) {
       preco: 22.90,
       quantidade: 30);
   Map<String, dynamic> livro = {};
-  
+
   // antes da compra
   print("Lista atual: ");
   print(livros);
@@ -28,12 +28,14 @@ comprar(List<Map<String, dynamic>> livros) {
         String? quant = stdin.readLineSync();
 
         if (quant != null) {
-
           if (int.parse(livro["quantidade"]) >= int.parse(quant)) {
             var estoqueLivros = int.parse(livro["quantidade"]);
             estoqueLivros -= int.parse(quant);
-            livro["quantidade"] = estoqueLivros;
-            // Não retira do estoque da segunda vez
+
+            String estoqueNovo = estoqueLivros
+                .toString(); // converte para string para então sobrescrever
+
+            livro.update("quantidade", (value) => estoqueNovo);
           } else {
             print("Quantidade indisponível!");
           }
@@ -43,7 +45,4 @@ comprar(List<Map<String, dynamic>> livros) {
       }
     }
   }
-
-  print("Lista atual: ");
-  print(livros);
 }
