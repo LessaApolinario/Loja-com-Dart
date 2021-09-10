@@ -11,34 +11,36 @@ comprar(List<Map<String, dynamic>> livros) {
       preco: 22.90,
       quantidade: 30);
   Map<String, dynamic> livro = {};
+  
+  // antes da compra
+  print("Lista atual: ");
+  print(livros);
 
   print("Informe o ID do livro a ser comprado: ");
-  l.id = stdin.readLineSync();
+  String? cod = stdin.readLineSync();
 
-  for (livro in livros) {
-    if (livro["id"] == l.id) {
-      print("Informe a quantidade de livros do mesmo volume: ");
-      String? estoque = stdin.readLineSync();
-      // até aqui funcionando
+  if (cod != null) {
+    int.parse(cod);
 
-      if (estoque != null) {
-        l.setQuantidade(int.parse(livro["quantidade"]));
+    for (livro in livros) {
+      if (livro["id"] == cod) {
+        print("Informe a quantidade do produto: ");
+        String? quant = stdin.readLineSync();
 
-        if (l.getQuantidade() <= 0) {
-          print("Estoque indisponível para este volume!");
-        } else if (l.getQuantidade() > 0) {
-          int novoEstoque = l.getQuantidade();
-          novoEstoque -= int.parse(estoque); // removendo quantidade do estoque
+        if (quant != null) {
 
-          livro.remove("quantidade"); // removendo o estoque do map
-
-          livro["quantidade"] = novoEstoque; // adicionando o valor atualizado no map
-
-          print("Livro comprado com sucesso!");
+          if (int.parse(livro["quantidade"]) >= int.parse(quant)) {
+            var estoqueLivros = int.parse(livro["quantidade"]);
+            estoqueLivros -= int.parse(quant);
+            livro["quantidade"] = estoqueLivros;
+            // Não retira do estoque da segunda vez
+          } else {
+            print("Quantidade indisponível!");
+          }
         }
+      } else {
+        print("O produto não existe!");
       }
-    } else {
-      print("O ID não existe!");
     }
   }
 
