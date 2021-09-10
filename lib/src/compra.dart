@@ -31,7 +31,6 @@ comprar(List<Map<String, dynamic>> livros) {
           if (int.parse(livro["quantidade"]) >= int.parse(quant)) {
             var estoqueLivros = int.parse(livro["quantidade"]);
             estoqueLivros -= int.parse(quant);
-
             String estoqueNovo = estoqueLivros
                 .toString(); // converte para string para então sobrescrever
 
