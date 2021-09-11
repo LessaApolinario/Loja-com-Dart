@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:loja/src/att_livros.dart';
 import 'package:loja/src/cad_livros.dart';
 import 'package:loja/src/compra.dart';
 import 'package:loja/src/menu.dart';
@@ -18,7 +19,7 @@ void main(List<String> arguments) {
           cadastrarLivro(livros);
           break;
         case 2:
-          // atualizarLivro();
+          atualizarLivro(livros);
           break;
         case 3:
           comprar(livros);
