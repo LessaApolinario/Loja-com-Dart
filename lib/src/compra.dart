@@ -34,6 +34,8 @@ comprar(List<Map<String, dynamic>> livros) {
             String estoqueNovo = estoqueLivros.toString(); // converte para string para então sobrescrever
 
             livro.update("quantidade", (value) => estoqueNovo);
+
+            print("Livro comprado com sucesso!");
           } else {
             print("Quantidade indisponível!");
           }
