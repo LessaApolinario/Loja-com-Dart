@@ -6,8 +6,7 @@ class Livro {
   var preco;
   var quantidade;
 
-  Livro(
-      {var id, var titulo, var autor, var editora, var preco, var quantidade}) {
+  Livro({var id, var titulo, var autor, var editora, var preco, var quantidade}) {
     this.id = id;
     this.titulo = titulo;
     this.autor = autor;
