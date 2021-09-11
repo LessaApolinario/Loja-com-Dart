@@ -1,7 +1,5 @@
 import 'dart:io';
 
-import 'Livro.dart';
-
 atualizarLivro(List<Map<String, dynamic>> livros) {
   Map<String, dynamic> livro = {};
 
