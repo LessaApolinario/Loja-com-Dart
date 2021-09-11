@@ -27,8 +27,6 @@ atualizarFuncionario(List<Map<String, dynamic>> funcionarios) {
 
           print("Funcionário atualizado com sucesso!");
         }
-      } else {
-        print("O funcionário não existe!");
       }
     }
   }
