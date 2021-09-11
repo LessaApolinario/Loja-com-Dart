@@ -40,8 +40,6 @@ comprar(List<Map<String, dynamic>> livros) {
             print("Quantidade indisponível!");
           }
         }
-      } else {
-        print("O produto não existe!");
       }
     }
   }
