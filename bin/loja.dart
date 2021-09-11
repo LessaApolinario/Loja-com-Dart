@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:loja/src/att_funcionario.dart';
 import 'package:loja/src/att_livros.dart';
 import 'package:loja/src/cad_funcionario.dart';
 import 'package:loja/src/cad_livros.dart';
@@ -31,7 +32,7 @@ void main(List<String> arguments) {
           cadastrarFuncionario(funcionarios);
           break;
         case 5:
-          // atualizarFuncionario();
+          atualizarFuncionario(funcionarios);
           break;
         case 6:
           // demitir();
