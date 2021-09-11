@@ -6,6 +6,7 @@ import 'package:loja/src/cad_funcionario.dart';
 import 'package:loja/src/cad_livros.dart';
 import 'package:loja/src/compra.dart';
 import 'package:loja/src/consulta_livros.dart';
+import 'package:loja/src/demitir.dart';
 import 'package:loja/src/menu.dart';
 
 void main(List<String> arguments) {
@@ -35,7 +36,7 @@ void main(List<String> arguments) {
           atualizarFuncionario(funcionarios);
           break;
         case 6:
-          // demitir();
+          demitir(funcionarios);
           break;
         case 7:
           consultarLivros(livros);
