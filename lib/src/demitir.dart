@@ -16,10 +16,7 @@ demitir(List<Map<String, dynamic>> funcionarios) {
 
         funcionarios.removeAt(index);
         print("Funcionário demitido com sucesso!");
-        break;
-      } else {
-        print("O funcionário não existe!");
       }
-    }    
+    }
   }
 }
