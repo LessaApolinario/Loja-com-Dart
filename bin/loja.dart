@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:loja/src/att_livros.dart';
 import 'package:loja/src/cad_livros.dart';
 import 'package:loja/src/compra.dart';
+import 'package:loja/src/consulta_livros.dart';
 import 'package:loja/src/menu.dart';
 
 void main(List<String> arguments) {
@@ -34,7 +35,7 @@ void main(List<String> arguments) {
           // demitir();
           break;
         case 7:
-          // consultarLivros();
+          consultarLivros(livros);
           break;
         case 8:
           // consultarFuncionarios();
