@@ -3,13 +3,6 @@ import 'dart:io';
 import 'Livro.dart';
 
 atualizarLivro(List<Map<String, dynamic>> livros) {
-  Livro l = new Livro(
-      id: 0,
-      titulo: "Título",
-      autor: "Autor",
-      editora: "Editora",
-      preco: 22.90,
-      quantidade: 30);
   Map<String, dynamic> livro = {};
 
   print("Lista atual: ");
