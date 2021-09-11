@@ -1,7 +1,5 @@
 import 'dart:io';
 
-import 'Livro.dart';
-
 void consultarLivros(List<Map<String, dynamic>> livros) {
   Map<String, dynamic> livro = {};
   int counter = 1;
