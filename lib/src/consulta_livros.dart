@@ -5,7 +5,7 @@ void consultarLivros(List<Map<String, dynamic>> livros) {
   int counter = 1;
 
   print("Livros: ");
-  
+
   for (livro in livros) {
     print("--------------------");
     print("Livro: ${counter}");
