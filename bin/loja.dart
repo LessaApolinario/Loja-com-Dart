@@ -5,6 +5,7 @@ import 'package:loja/src/att_livros.dart';
 import 'package:loja/src/cad_funcionario.dart';
 import 'package:loja/src/cad_livros.dart';
 import 'package:loja/src/compra.dart';
+import 'package:loja/src/consulta_funcionarios.dart';
 import 'package:loja/src/consulta_livros.dart';
 import 'package:loja/src/demitir.dart';
 import 'package:loja/src/menu.dart';
@@ -42,7 +43,7 @@ void main(List<String> arguments) {
           consultarLivros(livros);
           break;
         case 8:
-          // consultarFuncionarios();
+          consultarFuncionarios(funcionarios);
           break;
         case 0:
           print("Obrigado pela preferência, volte sempre!");
