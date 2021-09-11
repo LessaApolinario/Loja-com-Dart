@@ -8,7 +8,9 @@ cadastrarFuncionario(List<Map<String, dynamic>> funcionarios) {
       sexo: "M",
       cpf: "123.456.789-01",
       telefone: "00 91234-5678",
-      salario: 2000.0);
+      salario: 2000.0,
+      idade: 19,
+      dataDeNascimento: "27/08/2002");
   Map<String, dynamic> funcionario = {};
 
   print("Informe o nome do funcionário: ");
@@ -30,6 +32,14 @@ cadastrarFuncionario(List<Map<String, dynamic>> funcionarios) {
   print("Informe o salário do funcionário: ");
   funcionario["salario"] = stdin.readLineSync();
   f.setSalario(double.parse(funcionario["salario"]));
+
+  print("Informe a idade do funcionário: ");
+  funcionario["idade"] = stdin.readLineSync();
+  f.setIdade(int.parse(funcionario["idade"]));
+
+  print("Informe a data de nascimento do funcionário: ");
+  funcionario["dataDeNascimento"] = stdin.readLineSync();
+  f.setDataDeNascimento(funcionario["dataDeNascimento"]);
 
   funcionarios.add(funcionario);
 }
